@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.e.trackeractivity.Pertemuan2.ListActivity;
+import com.e.trackeractivity.Pertemuan2.RecyclerActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -22,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
         Button mybtn = (Button)findViewById(R.id.button1);
         final EditText myEditText = (EditText)findViewById(R.id.editText1);
         Button btnHelp = (Button)findViewById(R.id.btnHelp);
+
+        //Pertemuan2
+        Button btnList = (Button)findViewById(R.id.buttonListView);
+        Button btnRecycler = (Button)findViewById(R.id.buttonRecyclerView);
+        Button btnCard = (Button)findViewById(R.id.buttonCardView);
 
         //action
         txtView.setText(R.string.text_hello_world);
@@ -41,6 +49,20 @@ public class MainActivity extends AppCompatActivity {
                 b.putString("help_string",myEditText.getText().toString());
                 intent.putExtras(b);
 
+                startActivity(intent);
+            }
+        });
+        btnList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ListActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnRecycler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RecyclerActivity.class);
                 startActivity(intent);
             }
         });

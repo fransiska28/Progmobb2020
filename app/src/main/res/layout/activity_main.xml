@@ -53,11 +53,46 @@
         android:layout_height="0dp"
         android:layout_marginStart="132dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="296dp"
+        android:layout_marginBottom="320dp"
         android:text="Help"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="List"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHelp" />
+
+    <Button
+        android:id="@+id/buttonRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="8dp"
+        android:text="Recycler"
+        app:layout_constraintStart_toEndOf="@+id/buttonListView"
+        app:layout_constraintTop_toBottomOf="@+id/btnHelp" />
+
+    <Button
+        android:id="@+id/buttonCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonRecyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/btnHelp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
