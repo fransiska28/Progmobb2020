@@ -16,6 +16,7 @@ public class Mahasiswa {
     }
 
     public void setNama(String nama) {
+
         this.nama = nama;
     }
 
@@ -24,6 +25,7 @@ public class Mahasiswa {
     }
 
     public void setNim(String nim) {
+
         this.nim = nim;
     }
 
