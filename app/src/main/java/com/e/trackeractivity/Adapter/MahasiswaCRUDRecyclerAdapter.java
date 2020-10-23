@@ -15,13 +15,17 @@ import com.e.trackeractivity.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MahasiswaRecyclerAdapter extends RecyclerView.Adapter<MahasiswaRecyclerAdapter.ViewHolder> {
+public class MahasiswaCRUDRecyclerAdapter extends RecyclerView.Adapter<MahasiswaCRUDRecyclerAdapter.ViewHolder> {
     private Context context;
     private List<Mahasiswa> mahasiswaList;
 
-    public MahasiswaRecyclerAdapter(Context context) {
+    public MahasiswaCRUDRecyclerAdapter(Context context) {
         this.context = context;
         mahasiswaList = new ArrayList<>();
+    }
+
+    public MahasiswaCRUDRecyclerAdapter(List<Mahasiswa> mahasiswaList) {
+        this.mahasiswaList = mahasiswaList;
     }
 
     public List<Mahasiswa> getMahasiswaList() {
@@ -35,18 +39,18 @@ public class MahasiswaRecyclerAdapter extends RecyclerView.Adapter<MahasiswaRecy
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item_list_cardview,parent,false);
+    public MahasiswaCRUDRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.litem_list_recycler,parent,false);
         return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MahasiswaCRUDRecyclerAdapter.ViewHolder holder, int position) {
         Mahasiswa m = mahasiswaList.get(position);
 
         holder.tvNama.setText(m.getNama());
+        //holder.tvNoTelp.setText(m.getNoTelp());
         holder.tvNim.setText(m.getNim());
-        holder.tvNoTelp.setText(m.getNoTelp());
     }
 
     @Override
@@ -54,14 +58,14 @@ public class MahasiswaRecyclerAdapter extends RecyclerView.Adapter<MahasiswaRecy
         return mahasiswaList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView tvNama, tvNim, tvNoTelp;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvNama = itemView.findViewById(R.id.tvNama);
             tvNim = itemView.findViewById(R.id.tvNim);
-            tvNoTelp = itemView.findViewById(R.id.tvNoTelp);
+            //tvNoTelp = itemView.findViewById(R.id.tvNoTelp);
         }
     }
 }
